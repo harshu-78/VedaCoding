@@ -149,8 +149,7 @@ const Footer = () => {
     {/* Copyright Strip */}
 <div 
   className="relative z-20 bg-[#111827] py-4 px-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-300 gap-3"
-  data-aos="fade-up" 
-  data-aos-delay="700"
+ 
 >
   <div>© 2025 Rudraksha Store. All Rights Reserved.</div>
   <div className="flex gap-4">

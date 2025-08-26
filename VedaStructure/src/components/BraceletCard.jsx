@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 
 const bracelets = [
@@ -25,7 +24,6 @@ const bracelets = [
   { id: 20, name: "Evil Eye Bracelet", price: 699, originalPrice: 899, img: "/images/Evil Eye Bracelet.jpg" },
 ];
 
-
 export default function BraceletCard() {
   const [showAll, setShowAll] = useState(false);
   const [wishlist, setWishlist] = useState([]);
@@ -44,27 +42,42 @@ export default function BraceletCard() {
   return (
     <section className="py-16 bg-gradient-to-b from-yellow-50 to-orange-50">
       <div className="container mx-auto px-6">
+        
         {/* Heading */}
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-extrabold text-orange-700 drop-shadow-md">
+          <h2
+            className="text-4xl font-extrabold text-orange-700 drop-shadow-md"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             Spiritual Bracelets ✨
           </h2>
-          <p className="text-gray-600 mt-2">
+          <p
+            className="text-gray-600 mt-2"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             Discover 100% authentic sacred bracelets to uplift your energy
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-          {visibleCards.map((item) => {
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+          {visibleCards.map((item, index) => {
             const discount = getDiscount(item.originalPrice, item.price);
             const isWished = wishlist.includes(item.id);
 
+            // Different animation for variety
+            const animations = ["zoom-in", "fade-up", "fade-up-right", "fade-up-left"];
+            const animation = animations[index % animations.length];
+
             return (
-              <motion.div
+              <div
                 key={item.id}
-                whileHover={{ scale: 1.05 }}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden group relative"
+                data-aos={animation}
+                data-aos-delay={index * 100}
+                data-aos-duration="1000"
               >
                 {/* Image */}
                 <div className="relative h-56 w-full">
@@ -83,7 +96,9 @@ export default function BraceletCard() {
                   <button
                     onClick={() => toggleWishlist(item.id)}
                     className={`absolute top-3 right-3 p-2 rounded-full shadow-md transition-all duration-300 ${
-                      isWished ? "bg-red-500 text-white" : "bg-white/80 text-gray-700 hover:bg-red-500 hover:text-white"
+                      isWished
+                        ? "bg-red-500 text-white"
+                        : "bg-white/80 text-gray-700 hover:bg-red-500 hover:text-white"
                     }`}
                   >
                     <Heart
@@ -94,34 +109,43 @@ export default function BraceletCard() {
 
                 {/* Content */}
                 <div className="p-4 text-center">
-                  <h3 className="font-semibold text-lg text-gray-800">
+                  <h3
+                    className="font-semibold text-lg text-gray-800"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
                     {item.name}
                   </h3>
-                  <div className="flex justify-center items-center gap-2 mt-1">
-                    {/* Cut Price First */}
+                  <div
+                    className="flex justify-center items-center gap-2 mt-1"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
                     <p className="text-gray-500 line-through text-sm">
                       ₹{item.originalPrice}
                     </p>
-                    {/* Current Price */}
                     <p className="text-orange-600 font-bold">₹{item.price}</p>
-                    {/* Discount */}
                     {discount > 0 && (
                       <span className="text-green-600 font-semibold text-sm">
                         {discount}% OFF
                       </span>
                     )}
                   </div>
-                  <button className="mt-3 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-2 rounded-full font-semibold shadow-md hover:shadow-lg transition-all">
+                  <button
+                    className="mt-3 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-2 rounded-full font-semibold shadow-md hover:shadow-lg transition-all"
+                    data-aos="zoom-in"
+                    data-aos-delay="400"
+                  >
                     Add to Cart
                   </button>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-10">
+        <div className="text-center mt-10" data-aos="zoom-in-up">
           {!showAll && (
             <button
               onClick={() => setShowAll(true)}

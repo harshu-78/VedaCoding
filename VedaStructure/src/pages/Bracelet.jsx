@@ -12,6 +12,7 @@ import GemstoneLayout from "../components/GemstoneLayout";
 import BraceletCard from "../components/BraceletCard";
 import BookSession from "../components/BookSession";
 
+
 function Bracelet() {
 
    useEffect(() => {
@@ -28,8 +29,9 @@ function Bracelet() {
          <BraceletCard />
          <GemstoneLayout />
          <BookSession />
-            <AppDownloadSection />
-            <Footer/>
+      
+        <AppDownloadSection />
+        <Footer/>
     </div>
   );
 }
