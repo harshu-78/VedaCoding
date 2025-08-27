@@ -14,8 +14,8 @@ export default function AppDownloadSection() {
   }, [mockups.length]);
 
   return (
-    <section className="bg-gradient-to-br from-yellow-50 via-orange-50 to-yellow-100 py-20 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <section className="bg-gradient-to-br from-yellow-50 via-orange-50 to-yellow-100 py-20 px-6 overflow-hidden ">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center  overflow-hidden ">
         
         {/* Left Content */}
         <div className="relative z-10">

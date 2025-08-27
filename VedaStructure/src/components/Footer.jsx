@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="mt-20 relative ">
+    <footer className="mt-20 relative  overflow-hidden ">
       {/* Yellow Coupon Section */}
       <div
         className="relative z-10 bg-[#f4b61e] rounded-2xl shadow-lg w-[90%] sm:w-[80%] md:w-[65%] max-w-5xl mx-auto py-6 px-2 sm:py-10 sm:px-6 md:py-12 md:px-8 text-center text-white -mb-20"
@@ -148,7 +148,7 @@ const Footer = () => {
      
     {/* Copyright Strip */}
 <div 
-  className="relative z-20 bg-[#111827] py-4 px-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-300 gap-3"
+  className="relative z-20 bg-[#111827] py-4 px-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-300 gap-3 overflow-hidden "
  
 >
   <div>© 2025 Rudraksha Store. All Rights Reserved.</div>
