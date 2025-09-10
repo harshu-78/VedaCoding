@@ -185,7 +185,7 @@ const AllRudraksha = () => {
           </Slider>
         </div>
       </div>
-    </section>
+    </section> 
   );
 };
 

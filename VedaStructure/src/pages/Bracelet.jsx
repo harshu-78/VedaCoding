@@ -1,8 +1,5 @@
 
  import Braceletbanner from "../components/Braceletbanner";
-// import About from "../components/About"; 
-// import AllRudraksha from "../components/AllRudraksha";
-// import OurServices from "../components/OurServices";
 import AppDownloadSection from "../components/AppDownloadSection";
 import Footer from "../components/Footer";
 import { useEffect } from "react";
@@ -29,7 +26,6 @@ function Bracelet() {
          <BraceletCard />
          <GemstoneLayout />
          <BookSession />
-      
         <AppDownloadSection />
         <Footer/>
     </div>

@@ -90,7 +90,7 @@ export default function Navbar() {
       </div>
 
       {/* 🔸 Desktop Navbar */}
-      <nav className="bg-white border-b border-gray-200 hidden md:block">
+      <nav className="bg-white border-b border-gray-200 hidden md:block"   >
         <ul className="flex flex-wrap items-center justify-center space-x-6 text-gray-800 text-sm font-medium tracking-wide py-3">
           <li><a href="/" className="hover:text-yellow-600 px-2">Home</a></li>
 
@@ -120,7 +120,8 @@ export default function Navbar() {
             </div>
           </li>
 
-          <li><a href="#" className="hover:text-yellow-600 px-2">Idols & Statues</a></li>
+          <li><a href="#" className="hover:text-yellow-600 px-2">  <Link to="/Puja">Puja</Link>
+</a></li>
 
           {/* Veda Store */}
           <li className="relative group">
@@ -141,8 +142,7 @@ export default function Navbar() {
               Support <FaAngleDown />
             </button>
             <div className="dropdown hidden absolute left-0 top-full bg-white shadow-lg border rounded-md w-44 z-10 group-hover:block">
-              <a href="#" className="block px-4 py-2 hover:bg-yellow-100">Contact Us</a>
-              <a href="#" className="block px-4 py-2 hover:bg-yellow-100">FAQ</a>
+              <Link to="/Contact" className="block px-4 py-2 hover:bg-yellow-100">Contact Us</Link>
             </div>
           </li>
 
@@ -210,8 +210,7 @@ export default function Navbar() {
             </button>
             {openDropdown === "support" && (
               <div className="pl-4 space-y-1">
-                <a href="#" className="block hover:text-yellow-600">Contact Us</a>
-                <a href="#" className="block hover:text-yellow-600">FAQ</a>
+             <Link to="/Contact" className="block px-4 py-2 hover:bg-yellow-100">Contact Us</Link>
               </div>
             )}
           </div>

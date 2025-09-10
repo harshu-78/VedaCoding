@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -40,46 +42,43 @@ const Footer = () => {
           <div data-aos="fade-right" data-aos-delay="200">
             <img src="/images/footer-logo.png" className="h-12" alt="Logo" />
             <p className="mt-6 text-sm leading-relaxed text-gray-300">
-              #1 Canadian top rated online dispensary that meets the consistent
-              needs in every single medical marijuana aspect. The team here at
-              TopShelfBC is heavily involved in the Canadian cannabis industry
-              for over 15 years. We strive to provide the top quality products,
-              service and care at the lowest prices you'll ever find.
+              Veda Structure is your one-stop destination for all spiritual needs, 
+              offering authentic rituals, astrology services, and sacred items to enhance your spiritual journey.
             </p>
           </div>
 
           {/* COL-2 */}
           <div data-aos="fade-up" data-aos-delay="300">
-            <h3 className="text-lg font-semibold mb-4">QUICK LINK</h3>
+            <h3 className=" text-3xl font-bold mb-4 cursor-pointer hover:text-yellow-300 ">QUICK LINK</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-yellow-300">
-                  Track Your Order
+                 <Link to="/Puja"> Book Puja</Link>
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-yellow-300">
-                  Rudraksha All
+                  Blog | Articles
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-yellow-300">
-                  Flower
+                  Veda Store 
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-yellow-300">
-                  Edibles
+                  Spiritual Blog
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-yellow-300">
-                  Concentrates
+                <Link to="/#">About Us</Link>
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-yellow-300">
-                  Refunds
+                   <Link to="/Contact">Contact Us</Link>
                 </a>
               </li>
             </ul>
@@ -87,50 +86,60 @@ const Footer = () => {
 
           {/* COL-3 */}
           <div data-aos="fade-up" data-aos-delay="400">
-            <h3 className="text-lg font-semibold mb-4">MORE</h3>
+            <h3 className=" text-3xl font-bold mb-4 cursor-pointer hover:text-yellow-300 ">IMPORTANT LINK</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-yellow-300">
-                  Mushrooms
+                  <Link to="/Policy"> Privacy and Policy</Link>
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-yellow-300">
-                  Promotions / Bundles
+                 <Link to="/Terms"> Terms and Conditions</Link>
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-yellow-300">
-                  Support
+                  <Link to="/Refund"> Refund Policy</Link>
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-yellow-300">
-                  Reward
+                   <Link to="/AstrologyComp"> Become a Astrologer</Link>
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-yellow-300">
-                  Blog
+                 <Link to="/AstrologyLogin"> Astrologer Login</Link>
                 </a>
               </li>
-              <li>
-                <a href="#" className="hover:text-yellow-300">
-                  Shipping Faq
-                </a>
-              </li>
+              
             </ul>
           </div>
 
           {/* COL-4 */}
-          <div data-aos="fade-left" data-aos-delay="500">
-            <h3 className="text-lg font-semibold mb-4">CONTACT US</h3>
-            <ul className="space-y-2 text-sm">
-              <li className="hover:text-yellow-300">info@topshelfbcc.cc</li>
-              <li className="hover:text-yellow-300">+1 9279348162</li>
-              <li className="hover:text-yellow-300">info@topshelfbcc.cc</li>
-            </ul>
-          </div>
+         <div data-aos="fade-left" data-aos-delay="500">
+  <h3 className="text-3xl font-bold mb-4 cursor-pointer hover:text-yellow-300 flex items-center gap-2">
+    <Link to="/Contact" className="flex items-center gap-2">
+      CONTACT US
+    </Link>
+  </h3>
+
+  <ul className="space-y-2 text-sm">
+    <li className="flex items-center gap-2 hover:text-yellow-300">
+      <MapPin className="w-4 h-4 " />
+      Varanasi, Uttar Pradesh 221001
+    </li>
+    <li className="flex items-center gap-2 hover:text-yellow-300">
+      <Phone className="w-4 h-4 " />
+      +91-9634876239
+    </li>
+    <li className="flex items-center gap-2 hover:text-yellow-300">
+      <Mail className="w-4 h-4 " />
+      care@vedastructure.com
+    </li>
+  </ul>
+</div>
         </div>
 
         {/* Payment Icons */}
@@ -151,11 +160,11 @@ const Footer = () => {
   className="relative z-20 bg-[#111827] py-4 px-6 flex flex-col md:flex-row items-center justify-between text-xs text-gray-300 gap-3 overflow-hidden "
  
 >
-  <div>© 2025 Rudraksha Store. All Rights Reserved.</div>
+  <div>© 2025 Veda Structure . All rights reserved.</div>
   <div className="flex gap-4">
     <a href="#" className="hover:text-white">Out Of Stock</a>
     <a href="#" className="hover:text-white">Privacy Policy</a>
-    <a href="#" className="hover:text-white">Terms & Conditions</a>
+    <a href="#" className="hover:text-white"><Link to="/Terms"> Terms and Conditions</Link></a>
   </div>
 </div>
 
