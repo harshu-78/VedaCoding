@@ -161,18 +161,22 @@ const GaneshPuja = () => {
                 body {
                     font-family: 'Poppins', sans-serif;
                 }
+                    
                 .font-serif {
                     font-family: 'Merriweather', serif;
                 }
+
                 .animated-section {
                     opacity: 0;
                     transform: translateY(50px);
                     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
                 }
+
                 .animated-section.is-visible {
                     opacity: 1;
                     transform: translateY(0);
                 }
+
                 .stagger-item {
                     opacity: 0;
                     transform: translateY(20px);
