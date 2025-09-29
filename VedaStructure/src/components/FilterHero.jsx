@@ -72,11 +72,11 @@ export default function Hero() {
             >
               Book Puja →
             </button>
-            <button
-              onClick={() => setIsDetailsOpen(true)}
-              className="px-6 py-2 border border-orange-300 rounded-full text-orange-600 font-medium hover:bg-orange-50 transition"
+             <button
+              onClick={() => setIsPopupOpen(true)}
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-yellow-400 text-white px-7 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 transition"
             >
-              ▶ Watch Demo
+              Book Yagya →
             </button>
           </div>
 
@@ -88,7 +88,7 @@ export default function Hero() {
               data-aos-delay="1000"
             >
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-100 to-amber-200 flex items-center justify-center text-orange-600 text-xl font-bold">
-                ﷽
+               🕉️
               </div>
               <div>
                 <div className="font-semibold">Authentic Vedic</div>

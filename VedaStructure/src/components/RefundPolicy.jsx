@@ -1,108 +1,122 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
-
-const RefundPolicy = () => {
+export default function RefundPolicy() {
   return (
-    <div className="bg-gray-50 min-h-screen flex items-center justify-center py-12 px-6">
-      <div className="bg-white max-w-4xl w-full rounded-2xl shadow-xl p-8 md:p-12">
-        {/* Heading */}
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-6">
-          Refund Policy
-        </h1>
-        <p className="text-gray-600 text-center mb-10">
-          At <span className="font-semibold text-yellow-500">VedaStructure</span>, we value our customers
-          and their trust. Please read our refund policy carefully before making
-          any bookings or purchases.
-        </p>
-
-        {/* Policy Sections */}
-        <div className="space-y-6 text-gray-700 leading-relaxed">
-          <section>
-            <h2 className="text-xl font-semibold text-yellow-600 mb-2">
-              1. Eligibility for Refund
-            </h2>
-            <p>
-              Refunds will be considered only in cases of incorrect payments,
-              double transactions, or technical errors. Please note that
-              consultation fees for astrologers, puja services, and rituals are
-              <span className="font-medium"> non-refundable</span> once the
-              service has been delivered or initiated.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-yellow-600 mb-2">
-              2. Time Frame
-            </h2>
-            <p>
-              Any refund requests must be raised within{" "}
-              <span className="font-medium">7 working days</span> from the date
-              of payment. Requests received after this time will not be
-              considered.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-yellow-600 mb-2">
-              3. Mode of Refund
-            </h2>
-            <p>
-              Approved refunds will be processed back to the{" "}
-              <span className="font-medium">original payment method</span> used
-              during the transaction. Please allow{" "}
-              <span className="font-medium">7-10 business days</span> for the
-              amount to reflect in your account.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-yellow-600 mb-2">
-              4. Non-Refundable Cases
-            </h2>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Change of mind after booking a service.</li>
-              <li>
-                Services already delivered (consultation, puja, or ritual).
-              </li>
-              <li>Failure to attend a scheduled consultation or puja.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-yellow-600 mb-2">
-              5. Contact for Refunds
-            </h2>
-            <p>
-              For refund-related queries, please contact us at: <br />
-              <span className="block mt-2 font-medium">
-                📧 care@vedastructure.com
-              </span>
-              <span className="block font-medium">📞 +91-9634876239</span>
-            </p>
-          </section>
+    <div className="bg-gradient-to-br from-yellow-50 via-orange-50 to-white font-serif relative overflow-y-auto min-h-screen">
+      {/* Header */}
+      <header className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-12 shadow-lg relative z-10">
+        <div className="container mx-auto text-center px-4">
+          <h1 className="text-5xl font-extrabold tracking-wide drop-shadow-md">
+            Refund Policy
+          </h1>
         </div>
+      </header>
 
-        {/* Footer note */}
-        <p className="mt-10 text-center text-gray-500 text-sm">
-          This Refund Policy is subject to change without prior notice. Please
-          review it periodically for updates.
-        </p>
+      {/* Main */}
+      <main className="container mx-auto px-6 py-12 relative z-10 min-h-screen">
+        <div className="bg-white rounded-3xl shadow-xl p-10 border-t-8 border-yellow-400">
+          <p className="mb-10 text-lg text-gray-700 leading-relaxed">
+            At{" "}
+            <span className="font-semibold text-yellow-600">Veda Structure</span>
+            , we value trust and devotion. Please read the Refund Policy
+            carefully to understand our terms and practices.
+          </p>
 
-        {/* Any Query Section */}
-        <div className="mt-12 text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            Any Query?
-          </h2>
-          <Link
-            to="/contact"
-            className="px-6 py-2 bg-yellow-500 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 transition duration-300"
-          >
-            Contact Us
-          </Link>
+          {/* Sections */}
+          <div className="space-y-10">
+            {/* Section 1 */}
+            <div className="flex items-start space-x-4">
+              <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white p-3 rounded-full shadow-md">
+                ✅
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-yellow-700">
+                  Eligibility for Refunds
+                </h2>
+                <p className="mt-2 text-gray-700">
+                  Refunds are available within{" "}
+                  <span className="font-semibold">7 days of purchase</span>,
+                  provided the service is unused or partially utilized.
+                </p>
+              </div>
+            </div>
+
+            {/* Section 2 */}
+            <div className="flex items-start space-x-4">
+              <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white p-3 rounded-full shadow-md">
+                ⚠️
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-yellow-700">
+                  Non-Refundable Services
+                </h2>
+                <ul className="list-disc pl-6 mt-2 text-gray-700 space-y-1">
+                  <li>Personalized astrology reports</li>
+                  <li>Completed spiritual consultations</li>
+                  <li>Services marked as “non-refundable”</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Section 3 */}
+            <div className="flex items-start space-x-4">
+              <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white p-3 rounded-full shadow-md">
+                💳
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-yellow-700">
+                  Refund Process
+                </h2>
+                <p className="mt-2 text-gray-700">
+                  Send us an email with your order details. Once approved,
+                  refunds will be processed within{" "}
+                  <span className="font-semibold">5–7 business days</span> to
+                  the original payment method.
+                </p>
+              </div>
+            </div>
+
+            {/* Section 4 */}
+            <div className="flex items-start space-x-4">
+              <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white p-3 rounded-full shadow-md">
+                📞
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-yellow-700">
+                  Contact Us
+                </h2>
+                <div className="bg-yellow-50 p-5 rounded-xl shadow-inner mt-3 border border-yellow-300">
+                  <ul className="space-y-2 text-gray-800">
+                    <li>
+                      📧{" "}
+                      <a
+                        href="mailto:support@vedastructure.com"
+                        className="text-yellow-700 font-semibold hover:underline"
+                      >
+                        support@vedastructure.com
+                      </a>
+                    </li>
+                    <li>📞 +91-98765-43210</li>
+                    <li>📍 Varanasi, India</li>
+                  </ul>
+                </div>
+                 <p className="text-gray-700 mb-4">
+                            If you have any queries regarding our Privacy Policy or how we
+                            handle your personal data, feel free to reach out.  
+                            We’re here to assist you.
+                          </p>
+                          <Link
+                            to="/contact"
+                            className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-300"
+                          >
+                            Contact Us
+                          </Link>
+              </div>
+              
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
-};
-
-export default RefundPolicy;
+}

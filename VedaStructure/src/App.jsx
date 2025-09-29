@@ -7,9 +7,12 @@ import Puja from './pages/Puja';
 import Terms from './pages/Terms';
 import Policy from './pages/Policy';
 import Refund from './pages/Refund';
+import Ganesh from './pages/Ganesh';
+
 import { Routes, Route } from 'react-router-dom';
 import AstrologyLogin from './pages/AstrologyLogin';
 import AstrologyComp from './pages/AstrologyComp';
+import CardsDetailpge from './pages/CardsDetailpge';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
         <Route path="/Terms" element={<Terms />} />
         <Route path="/Policy" element={<Policy />} />
         <Route path="/Refund" element={<Refund />} />
+        <Route path="/Ganesh" element={<Ganesh />} />
+
+        <Route path="/cardsdetailpge" element={<CardsDetailpge />} />
         <Route path="/AstrologyLogin" element={<AstrologyLogin />} />
         <Route path="/AstrologyComp" element={<AstrologyComp />} />
         <Route path="*" element={<h1>404</h1>} />

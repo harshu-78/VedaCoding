@@ -106,7 +106,7 @@ export default function Navbar() {
             </div>
           </li>
 
-          <li><a href="#" className="hover:text-yellow-600 px-2">Astrology</a></li>
+          <li><a href="#" className="hover:text-yellow-600 px-2"> <Link to="/astrosati">Astrology</Link></a></li>
 
           {/* Healing Remedies */}
           <li className="relative group">

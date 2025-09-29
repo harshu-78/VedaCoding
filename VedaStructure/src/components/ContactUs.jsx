@@ -37,34 +37,37 @@ export default function ContactUs() {
         {/* Layout */}
      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
          
+      
+
          {/* Image Section */}
+<div className="flex justify-center items-center relative perspective-1000">
+  {/* Main Square Image */}
+  <div className="transform-style-preserve-3d transition-transform duration-700">
+    <img
+      src="/images/Contactus.jpg"
+      alt="Main Ritual"
+      className="w-50 h-72 md:w-96 md:h-96 object-cover rounded-2xl shadow-2xl border-none hover:scale-105 transition-transform duration-500"
+      style={{
+        boxShadow:
+          "0 20px 40px rgba(0,0,0,0.3), inset 0 5px 15px rgba(255,255,255,0.2)",
+      }}
+    />
+  </div>
 
-         <div className="flex justify-center items-center relative perspective-1000">
-             {/* Main Circle Image */}
-              <div className="transform-style-preserve-3d transition-transform duration-700 ">
-                <img
-                   src="/images/Contactus.jpg"
-                   alt="Main Ritual"
-                   className="w-72 h-72 md:w-96 md:h-96 object-cover rounded-full shadow-2xl border-none hover:scale-105 transition-transform duration-500"
-                   style={{
-                   boxShadow: "0 20px 40px rgba(0,0,0,0.3), inset 0 5px 15px rgba(255,255,255,0.2)"
-                   }}
-                  />
-             </div>
+  {/* Small Overlapping Image */}
+  <div className="absolute bottom-1 right-10 transform-style-preserve-3d transition-transform duration-700">
+    <img
+      src="/images/havan.jpg"
+      alt="Badge"
+      className="w-45 h-45 object-cover rounded-xl border-none shadow-xl hover:scale-110 transition-transform duration-500"
+      style={{
+        boxShadow:
+          "0 15px 30px rgba(0,0,0,0.3), inset 0 5px 10px rgba(255,255,255,0.15)",
+      }}
+    />
+  </div>
+</div>
 
-               {/* Small Overlapping Image */}
-         <div className="absolute bottom-1 right-10 transform-style-preserve-3d transition-transform duration-700">
-             <img
-               src="/images/havan.jpg"
-               alt="Badge"
-               className="w-45 h-45 object-cover rounded-full border-none shadow-xl hover:scale-110 transition-transform duration-500"
-               style={{
-               boxShadow: "0 15px 30px rgba(0,0,0,0.3), inset 0 5px 10px rgba(255,255,255,0.15)"
-               }}
-              />
-             </div>
-             
-    </div>
 
 
           {/* Form */}

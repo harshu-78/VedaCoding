@@ -68,7 +68,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#" className="hover:text-yellow-300">
-                  Spiritual Blog
+                 <Link to="/Ganesh"> Ganesh</Link>
                 </a>
               </li>
               <li>
