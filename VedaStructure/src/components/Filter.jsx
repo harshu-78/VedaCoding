@@ -1,9 +1,9 @@
 "use client";
-import { useState, useMemo } from "react";
-
+import { useState, useMemo, useEffect } from "react"; // <-- useEffect ko import karein
 import { Link } from 'react-router-dom';
+
 // Data 
-const initialCardsToShow = 6;
+const initialCardsToShow = 8;
 
 const categories = [
     { key: "all", label: "All Pujas" },
@@ -18,18 +18,18 @@ const categories = [
     { key: "puja", label: "Puja" },
 ];
 
-
-const initialPujas = [
+export const initialPujas = [
     { id: 1, title: "Bagalamukhi Yagya", desc: "For victory in legal battles, and triumph over enemies.", category: "yagya", img: "/images/Bagalamukhi Puja.jpg", location: "Kashi, Varanasi", price: 5100 },
     { id: 2, title: "Chandra Puja", desc: "For longevity, health, and protection from untimely death.", category: "yagya", img: "/images/Chandra Puja.jpg", location: "Trimbakeshwar, Nashik", price: 7500 },
     { id: 3, title: "Gaja Lakshmi Puja", desc: "Removes obstacles and ensures success in new ventures.", category: "havan", img: "/images/Gaja Lakshmi Puja (Ashta-Lakshmi).jpg", location: "Siddhivinayak, Mumbai", price: 3100 },
     { id: 4, title: "Sawan Special Rudrabhishek", desc: "A powerful Vedic ritual to please Lord Shiva during Sawan.", category: "upcoming", img: "/images/Sawan Special Vedic Yagya 2025 – In Kashi.jpg", location: "Kashi, Varanasi", price: 4100 },
     { id: 31, title: "Navratri Durga Puja", desc: "Celebrate the nine nights of devotion to Goddess Durga.", category: "upcoming", img: "/images/Navratri.jpeg", location: "Vindhyachal, Mirzapur", price: 3100 },
+    { id: 32, title: "Diwali Lakshmi Ganesh Puja", desc: "Special puja for wealth and prosperity on Diwali.", category: "upcoming", img: "/images/Gaja Lakshmi Puja (Ashta-Lakshmi).jpg", location: "Online", price: 2100 },
     { id: 5, title: "Adi Lakshmi Puja", desc: "Also known as the Primordial Lakshmi, she blesses devotees with wealth.", category: "dailypuja", img: "/images/Adi Lakshmi Puja (Ashta-Lakshmi).jpg", location: "Online", price: 1100 },
     { id: 6, title: "Shani Shanti Japa", desc: "Pacifies the malefic effects of Planet Saturn and brings discipline.", category: "japa", img: "/images/Shani Puja.jpg", location: "Shani Shingnapur", price: 2500 },
     { id: 7, title: "Durga Saptashati Path", desc: "A powerful recitation to seek blessings and protection from Goddess Durga.", category: "path", img: "/images/Dhanya Lakshmi Puja (Ashta-Lakshmi).jpg", location: "Vindhyachal, Mirzapur", price: 3500 },
     { id: 8, title: "Rahu Graha Shanti Homa", desc: "Protects from the malefic effects of Rahu and sudden misfortunes.", category: "havan", img: "/images/Bagalamukhi Puja.jpg", location: "Online", price: 2100 },
-    { id: 9, title: "Budh Graha Japa", desc: "Improves communication, intelligence, and business acumen.", category: "japa", img: "https://placehold.co/600x400/FFF3D7/805A2A?text=Budh+Japa", location: "Kashi, Varanasi", price: 2100 },
+    { id: 9, title: "Budh Graha Japa", desc: "Improves communication, intelligence, and business acumen.", category: "japa", img: "/images/Budh Puja (Mercury Puja).jpg", location: "Kashi, Varanasi", price: 2100 },
     { id: 10, title: "Vidya Lakshmi Puja", desc: "Blessings of Ashta Lakshmi for knowledge, arts, and academic success.", category: "dailypuja", img: "https://placehold.co/600x400/FFF3D7/805A2A?text=Vidya+Lakshmi+Puja", location: "Online", price: 1100 },
     { id: 11, title: "Kashi Khand Path", desc: "Recitation of the sacred Kashi Khand chapter from Skanda Purana.", category: "kashiKhand", img: "https://placehold.co/600x400/FFF3D7/805A2A?text=Kashi+Khand", location: "Kashi, Varanasi", price: 1500 },
     { id: 12, title: "Nitya Ati Rudrabhishek", desc: "Daily powerful offering to Lord Rudra for peace and prosperity.", category: "rudrabhishek", img: "https://placehold.co/600x400/FFF3D7/805A2A?text=Rudrabhishek", location: "Kashi, Varanasi", price: 11000 },
@@ -86,12 +86,12 @@ function PujaCard({ puja }) {
                         </div>
                     </div>
                   
-                    <Link to="/cardsdetailpge">
+                    <Link to={`/pujas/${puja.id}`}>
                         <button className="w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold py-3 px-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-[1.03]">
                             Book Now
                         </button>
                     </Link>
-              
+                
                 </div>
             </div>
         </div>
@@ -99,15 +99,20 @@ function PujaCard({ puja }) {
 }
 
 // Main Filter Component 
-
 export default function Filter() {
     const [search, setSearch] = useState("");
     const [filter, setFilter] = useState("all");
+    const [isExpanded, setIsExpanded] = useState(false); // <-- NAYA STATE BANAYA HAI
+
+    // YEH HOOK ENSURE KARTA HAI KI JAB BHI FILTER BADLE, VIEW RESET HO JAYE
+    useEffect(() => {
+        setIsExpanded(false);
+    }, [filter, search]);
 
     const { upcomingPujas, otherPujas } = useMemo(() => {
         const upcoming = initialPujas
             .filter(p => p.category === 'upcoming' && p.title.toLowerCase().includes(search.toLowerCase()))
-            .slice(0, 2);
+            .slice(0, 3); 
             
         const others = initialPujas.filter(p => {
             if (p.category === 'upcoming') return false;
@@ -120,7 +125,12 @@ export default function Filter() {
     }, [search, filter]);
 
     const isFiltered = filter !== 'all' || search !== '';
-    const displayedOtherPujas = isFiltered ? otherPujas : otherPujas.slice(0, initialCardsToShow);
+    
+    // Naya logic cards dikhane ke liye
+    const displayedOtherPujas = isFiltered ? otherPujas : (isExpanded ? otherPujas : otherPujas.slice(0, initialCardsToShow));
+
+    // Button kab dikhana hai, uski condition
+    const showExploreButton = !isFiltered && !isExpanded && otherPujas.length > initialCardsToShow;
 
     return (
         <section className="bg-gray-50 min-h-screen">
@@ -140,7 +150,8 @@ export default function Filter() {
                 <div className="grid lg:grid-cols-12 gap-8">
                     {/* Sidebar Filter */}
                     <aside className="lg:col-span-3 xl:col-span-2 bg-gradient-to-b from-white to-amber-50 rounded-2xl shadow-lg p-5 border border-gray-200/80 h-fit lg:sticky top-6">
-                        <div className="flex items-center gap-3 mb-5">
+                       {/* ...baki ka sidebar code waisa hi rahega... */}
+                       <div className="flex items-center gap-3 mb-5">
                             <span className="w-1.5 h-8 bg-gradient-to-b from-orange-500 to-yellow-400 rounded-full"></span>
                             <h2 className="text-xl font-extrabold text-gray-900 tracking-wide">Filters</h2>
                         </div>
@@ -174,7 +185,7 @@ export default function Filter() {
                     {/* Main Content Section */}
                     <div className="lg:col-span-9 xl:col-span-10">
                         {/* Regular Pujas Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-4 gap-6">
                             {displayedOtherPujas.length > 0 ? (
                                 displayedOtherPujas.map((puja) => (
                                     <PujaCard key={puja.id} puja={puja} />
@@ -186,6 +197,18 @@ export default function Filter() {
                                 </div>
                             )}
                         </div>
+                        
+                        {/* --- YAHAN NAYA BUTTON ADD KIYA GAYA HAI --- */}
+                        {showExploreButton && (
+                            <div className="text-center mt-10">
+                                <button
+                                    onClick={() => setIsExpanded(true)}
+                                    className="bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold py-3 px-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-[1.03]"
+                                >
+                                    Explore All Pujas
+                                </button>
+                            </div>
+                        )}
 
                         {/* Upcoming Pujas Section */}
                         {(filter === 'all' || filter === 'upcoming') && upcomingPujas.length > 0 && (
